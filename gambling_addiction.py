@@ -21,15 +21,15 @@ def print_number(number1, number2, number3, winning_array):
     print("--- --- ---")
 
     if round(number1) == winning_array[0] and round(number2) == winning_array[1] and round(number3) == winning_array[2]:
-        return "win"
+        return True
     else:
-        return "lose"
+        return False
 def gamble():
     # randomize the random winning chance array
     winning_array = [float(random.randint(0, 9)), float(random.randint(0, 9)), float(random.randint(0, 9))]
     win_lose = print_number(float(random.randint(0, 9)), float(random.randint(0, 9)), float(random.randint(0, 9)), winning_array=winning_array)
     
-    if win_lose == "win":
+    if win_lose:
         print("YOU WON!!!")
     else:
         print("You lost it all")  
